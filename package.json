@@ -5,6 +5,7 @@
   "type": "module",
   "dependencies": {
     "@commonmodule/app-components": "^0.1.8",
+    "@gaiaengine/2d-spine": "^0.1.9",
     "nft-attribute-editor": "^0.0.1"
   },
   "devDependencies": {
