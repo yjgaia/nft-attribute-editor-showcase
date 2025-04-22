@@ -1824,32 +1824,14 @@ li.chat-content-list-item.temp {
   bottom: 12px;
   z-index: 1;
 }
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .check-icon-container {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .checkbox,
+.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .checkbox,
+.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .checkbox,
+.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .checkbox {
   position: absolute;
   right: 12px;
   top: 12px;
   z-index: 1;
-  border: 1px solid var(--line-color);
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-}
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .check-icon-container > .icon,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .check-icon-container > .icon,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .check-icon-container > .icon,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .check-icon-container > .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item.selected > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item.selected > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item.selected > .check-icon-container,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item.selected > .check-icon-container {
-  border: 1px solid var(--paragraph-text-color);
 }
 .nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .game-screen,
 .nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .game-screen,

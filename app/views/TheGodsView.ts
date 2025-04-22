@@ -2,31 +2,34 @@ import { BodyNode, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import GodDisplay from "../components/GodDisplay.js";
 import fireManParts from "../parts-jsons/thegods/fire-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import fireWomanParts from "../parts-jsons/thegods/fire-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneManParts from "../parts-jsons/thegods/stone-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneWomanParts from "../parts-jsons/thegods/stone-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterManParts from "../parts-jsons/thegods/water-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterWomanParts from "../parts-jsons/thegods/water-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import keyToFrame from "../spritesheets/thegods/key-to-frame.json" with {
-  type: "json"
+  type: "json",
 };
 import spritesheet from "../spritesheets/thegods/spritesheet.json" with {
-  type: "json"
+  type: "json",
 };
 
 export default class TheGodsView extends View {
+  private godDisplay: GodDisplay;
+  private editor: NFTAttributeEditor;
+
   constructor() {
     super();
 
@@ -53,12 +56,12 @@ export default class TheGodsView extends View {
 
     this.container = el(
       ".thegods-view",
-      new GodDisplay({
+      this.godDisplay = new GodDisplay({
         type: showcaseData.traits.Type,
         gender: showcaseData.traits.Gender,
         parts: showcaseData.parts,
       }),
-      new NFTAttributeEditor({
+      this.editor = new NFTAttributeEditor({
         options: {
           traits: {
             Type: ["Stone", "Fire", "Water"],
@@ -84,8 +87,14 @@ export default class TheGodsView extends View {
         spritesheet,
         spritesheetImagePath: "https://api.gaia.cc/spritesheet/spritesheet.png",
       }),
-    ).appendTo(
-      BodyNode,
-    );
+    ).appendTo(BodyNode);
+
+    this.editor.on("dataChanged", (data) => {
+      this.godDisplay.setData({
+        type: data.traits!.Type as any,
+        gender: data.traits!.Gender as any,
+        parts: data.parts,
+      });
+    });
   }
 }
