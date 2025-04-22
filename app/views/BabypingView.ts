@@ -20,17 +20,17 @@ export default class BabypingView extends View {
       parts: { [partName: string]: string };
     } = {
       parts: {
-        Backgrounds: "Hills",
-        Character: "Kiki Leafmonkey",
-        Eyes: "Eye Shadow R",
-        Cheeks: "None",
-        Mouths: "Pink Grin",
-        Headwears: "Snail Hairband 3",
-        "Neck Accesories": "None",
-        Bags: "Gu Ping 3",
-        Shoes: "Leather Shoes",
-        "Wrist Accesories": "Flower Beads",
-        Items: "Blue Umbrella",
+        Background: "Hills",
+        Body: "Kiki Leafmonkey",
+        Eye: "Eye Shadow R",
+        Cheek: "None",
+        Mouth: "Pink Grin",
+        Headwear: "Snail Hairband 3",
+        "Neck Accesorie": "None",
+        Bag: "Gu Ping 3",
+        Shoe: "Leather Shoes",
+        "Wrist Accesorie": "Flower Beads",
+        Item: "Blue Umbrella",
       },
     };
 

@@ -20,19 +20,19 @@ export default class KCDKongzView extends View {
       parts: { [partName: string]: string };
     } = {
       parts: {
-        Backgrounds: "purple",
-        Character: "character",
-        Outfits: "indian clothes",
-        Eyes: "closed eyes",
-        Eyewears: "red glasses",
-        Accesories: "necklace",
-        Headwears: "baseball hat",
-        Mouths: "teeth mouth",
+        backgrounds: "purple",
+        character: "character",
+        outfits: "indian clothes",
+        eyes: "closed eyes",
+        eyewears: "red glasses",
+        accesories: "necklace",
+        headwears: "baseball hat",
+        mouths: "teeth mouth",
       },
     };
 
     this.container = el(
-      ".kcdkongz-view",
+      ".kcd-kongz-view",
       new KCDKongDisplay(showcaseData.parts),
       new NFTAttributeEditor({
         partOptions: kcdKongzParts,
