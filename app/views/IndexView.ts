@@ -5,7 +5,7 @@ export default class IndexView extends View {
   constructor() {
     super();
     this.container = el(
-      "#index",
+      ".index-view",
       new ButtonGroup(
         new Button({
           type: ButtonType.Outlined,

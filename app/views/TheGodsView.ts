@@ -2,22 +2,22 @@ import { BodyNode, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import GodDisplay from "../components/GodDisplay.js";
 import fireManParts from "../parts-jsons/thegods/fire-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import fireWomanParts from "../parts-jsons/thegods/fire-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneManParts from "../parts-jsons/thegods/stone-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneWomanParts from "../parts-jsons/thegods/stone-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterManParts from "../parts-jsons/thegods/water-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterWomanParts from "../parts-jsons/thegods/water-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 
 export default class TheGodsView extends View {
@@ -46,7 +46,7 @@ export default class TheGodsView extends View {
     };
 
     this.container = el(
-      "#thegods",
+      ".thegods-view",
       new GodDisplay({
         type: showcaseData.traits.type,
         gender: showcaseData.traits.gender,

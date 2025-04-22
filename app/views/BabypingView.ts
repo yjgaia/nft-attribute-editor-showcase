@@ -29,7 +29,7 @@ export default class BabypingView extends View {
     };
 
     this.container = el(
-      "#babyping",
+      ".babyping-view",
       new BabypingDisplay(showcaseData.parts),
       new NFTAttributeEditor({
         options: {

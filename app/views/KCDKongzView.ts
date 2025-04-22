@@ -26,7 +26,7 @@ export default class KCDKongzView extends View {
     };
 
     this.container = el(
-      "#kcdkongz",
+      ".kcdkongz-view",
       new KCDKongDisplay(showcaseData.parts),
       new NFTAttributeEditor({
         options: {

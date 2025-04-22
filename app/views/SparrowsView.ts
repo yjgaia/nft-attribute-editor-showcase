@@ -30,7 +30,7 @@ export default class SparrowsView extends View {
     };
 
     this.container = el(
-      "#sparrows",
+      ".sparrows-view",
       new SparrowDisplay({
         style: showcaseData.traits.style,
         parts: showcaseData.parts,
