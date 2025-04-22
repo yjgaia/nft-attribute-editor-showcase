@@ -16,11 +16,11 @@ export default class SparrowsView extends View {
     super();
 
     const showcaseData: {
-      traits: { style: "Illustration" | "Pixel Art" };
+      traits: { Style: "Illustration" | "Pixel Art" };
       parts: { [partName: string]: string };
     } = {
       traits: {
-        style: "Illustration",
+        Style: "Illustration",
       },
       parts: {
         Background: "Light green",
@@ -38,7 +38,7 @@ export default class SparrowsView extends View {
     this.container = el(
       ".sparrows-view",
       new SparrowDisplay({
-        style: showcaseData.traits.style,
+        style: showcaseData.traits.Style,
         parts: showcaseData.parts,
       }),
       new NFTAttributeEditor({

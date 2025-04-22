@@ -1,0 +1,37 @@
+.sparrows-view {
+  margin   : 30px auto;
+  max-width: 1128px;
+
+  display         : flex;
+  background-color: var(--modal-bg-color);
+  border-radius   : 8px;
+  overflow        : hidden;
+
+  @container (width <=@phone-width) {
+    flex-direction: column;
+  }
+
+  >.sparrow-display {
+    width      : 50%;
+    flex-shrink: 0;
+
+    @container (width <=@phone-width) {
+      width: 100%;
+    }
+  }
+
+  >.nft-attribute-editor {
+    width       : 50%;
+    flex-shrink : 0;
+    padding     : 68px;
+    aspect-ratio: 1;
+    overflow-y  : auto;
+
+    @container (width <=@phone-width) {
+      width       : 100%;
+      padding     : 22px 34px;
+      aspect-ratio: unset;
+      overflow-y  : visible;
+    }
+  }
+}

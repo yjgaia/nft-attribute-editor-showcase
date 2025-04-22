@@ -1876,4 +1876,41 @@ li.chat-content-list-item.temp {
     overflow-y: visible;
   }
 }
+.sparrows-view {
+  margin: 30px auto;
+  max-width: 1128px;
+  display: flex;
+  background-color: var(--modal-bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+@container (width <= 520px) {
+  .sparrows-view {
+    flex-direction: column;
+  }
+}
+.sparrows-view > .sparrow-display {
+  width: 50%;
+  flex-shrink: 0;
+}
+@container (width <= 520px) {
+  .sparrows-view > .sparrow-display {
+    width: 100%;
+  }
+}
+.sparrows-view > .nft-attribute-editor {
+  width: 50%;
+  flex-shrink: 0;
+  padding: 68px;
+  aspect-ratio: 1;
+  overflow-y: auto;
+}
+@container (width <= 520px) {
+  .sparrows-view > .nft-attribute-editor {
+    width: 100%;
+    padding: 22px 34px;
+    aspect-ratio: unset;
+    overflow-y: visible;
+  }
+}
 
