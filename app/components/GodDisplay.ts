@@ -4,22 +4,22 @@ import { GameScreen } from "@gaiaengine/2d";
 import { Spine } from "@gaiaengine/2d-spine";
 import { PartCategory, PartItem } from "nft-attribute-editor";
 import fireManParts from "../parts-jsons/thegods/fire-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import fireWomanParts from "../parts-jsons/thegods/fire-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneManParts from "../parts-jsons/thegods/stone-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import stoneWomanParts from "../parts-jsons/thegods/stone-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterManParts from "../parts-jsons/thegods/water-man-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import waterWomanParts from "../parts-jsons/thegods/water-woman-parts.json" with {
-  type: "json"
+  type: "json",
 };
 
 interface GodDisplayData {
@@ -90,12 +90,12 @@ export default class GodDisplay extends DomNode {
 
         let partValue: string | undefined;
 
-        if (part.condition.trait === "Type") {
+        if (part.condition.part === "Type") {
           partValue = this.data.type;
-        } else if (part.condition.trait === "Gender") {
+        } else if (part.condition.part === "Gender") {
           partValue = this.data.gender;
         } else {
-          partValue = this.data.parts[part.condition.trait];
+          partValue = this.data.parts[part.condition.part];
         }
 
         if (!partValue) {
