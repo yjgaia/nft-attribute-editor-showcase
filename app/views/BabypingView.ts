@@ -4,6 +4,12 @@ import BabypingDisplay from "../components/BabypingDisplay.js";
 import babypingParts from "../parts-jsons/babyping-parts.json" with {
   type: "json",
 };
+import keyToSprite from "../spritesheets/babyping/key-to-sprite.json" with {
+  type: "json",
+};
+import spritesheet from "../spritesheets/babyping/spritesheet.json" with {
+  type: "json",
+};
 
 export default class BabypingView extends View {
   constructor() {
@@ -32,10 +38,12 @@ export default class BabypingView extends View {
       ".babyping-view",
       new BabypingDisplay(showcaseData.parts),
       new NFTAttributeEditor({
-        options: {
-          parts: babypingParts,
-        },
+        options: { parts: babypingParts },
         data: showcaseData,
+        keyToSprite,
+        spritesheet,
+        spritesheetImagePath:
+          "https://api.matedevdao.workers.dev/babyping/spritesheet/spritesheet.png",
       }),
     ).appendTo(BodyNode);
   }
