@@ -19,7 +19,7 @@ import waterManParts from "../parts-jsons/thegods/water-man-parts.json" with {
 import waterWomanParts from "../parts-jsons/thegods/water-woman-parts.json" with {
   type: "json"
 };
-import keyToSprite from "../spritesheets/thegods/key-to-sprite.json" with {
+import keyToFrame from "../spritesheets/thegods/key-to-frame.json" with {
   type: "json"
 };
 import spritesheet from "../spritesheets/thegods/spritesheet.json" with {
@@ -31,12 +31,12 @@ export default class TheGodsView extends View {
     super();
 
     const showcaseData: {
-      traits: { type: "Stone" | "Fire" | "Water"; gender: "Man" | "Woman" };
+      traits: { Type: "Stone" | "Fire" | "Water"; Gender: "Man" | "Woman" };
       parts: { [partName: string]: string };
     } = {
       traits: {
-        type: "Water",
-        gender: "Woman",
+        Type: "Water",
+        Gender: "Woman",
       },
       parts: {
         Eye: "Gold Deep",
@@ -54,15 +54,15 @@ export default class TheGodsView extends View {
     this.container = el(
       ".thegods-view",
       new GodDisplay({
-        type: showcaseData.traits.type,
-        gender: showcaseData.traits.gender,
+        type: showcaseData.traits.Type,
+        gender: showcaseData.traits.Gender,
         parts: showcaseData.parts,
       }),
       new NFTAttributeEditor({
         options: {
           traits: {
-            type: ["Stone", "Fire", "Water"],
-            gender: ["Man", "Woman"],
+            Type: ["Stone", "Fire", "Water"],
+            Gender: ["Man", "Woman"],
           },
           parts: {
             Stone: {
@@ -80,9 +80,9 @@ export default class TheGodsView extends View {
           },
         },
         data: showcaseData,
-        keyToSprite,
+        keyToFrame,
         spritesheet,
-        spritesheetImagePath: "https://api.gaic.cc/spritesheet/spritesheet.png",
+        spritesheetImagePath: "https://api.gaia.cc/spritesheet/spritesheet.png",
       }),
     ).appendTo(
       BodyNode,

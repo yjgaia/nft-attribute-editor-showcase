@@ -4,7 +4,7 @@ import BabypingDisplay from "../components/BabypingDisplay.js";
 import babypingParts from "../parts-jsons/babyping-parts.json" with {
   type: "json",
 };
-import keyToSprite from "../spritesheets/babyping/key-to-sprite.json" with {
+import keyToFrame from "../spritesheets/babyping/key-to-frame.json" with {
   type: "json",
 };
 import spritesheet from "../spritesheets/babyping/spritesheet.json" with {
@@ -40,7 +40,7 @@ export default class BabypingView extends View {
       new NFTAttributeEditor({
         options: { parts: babypingParts },
         data: showcaseData,
-        keyToSprite,
+        keyToFrame: keyToFrame,
         spritesheet,
         spritesheetImagePath:
           "https://api.matedevdao.workers.dev/babyping/spritesheet/spritesheet.png",

@@ -1,14 +1,14 @@
 import { BodyNode, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
-import kcdKongzParts from "../parts-jsons/kcd-kongz-parts.json" with {
-  type: "json",
-};
 import KCDKongDisplay from "../components/KCDKongDisplay.js";
-import keyToSprite from "../spritesheets/kcd-kongz/key-to-sprite.json" with {
-  type: "json",
+import kcdKongzParts from "../parts-jsons/kcd-kongz-parts.json" with {
+  type: "json"
+};
+import keyToFrame from "../spritesheets/kcd-kongz/key-to-frame.json" with {
+  type: "json"
 };
 import spritesheet from "../spritesheets/kcd-kongz/spritesheet.json" with {
-  type: "json",
+  type: "json"
 };
 
 export default class KCDKongzView extends View {
@@ -39,7 +39,7 @@ export default class KCDKongzView extends View {
           parts: kcdKongzParts,
         },
         data: showcaseData,
-        keyToSprite,
+        keyToFrame,
         spritesheet,
         spritesheetImagePath:
           "https://api.matedevdao.workers.dev/kingcrowndao-kongz/spritesheet/spritesheet.png",
