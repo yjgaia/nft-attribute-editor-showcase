@@ -2,13 +2,13 @@ import { BodyNode, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import KCDKongDisplay from "../components/KCDKongDisplay.js";
 import kcdKongzParts from "../parts-jsons/kcd-kongz-parts.json" with {
-  type: "json"
+  type: "json",
 };
 import keyToFrame from "../spritesheets/kcd-kongz/key-to-frame.json" with {
-  type: "json"
+  type: "json",
 };
 import spritesheet from "../spritesheets/kcd-kongz/spritesheet.json" with {
-  type: "json"
+  type: "json",
 };
 
 export default class KCDKongzView extends View {
@@ -35,10 +35,8 @@ export default class KCDKongzView extends View {
       ".kcdkongz-view",
       new KCDKongDisplay(showcaseData.parts),
       new NFTAttributeEditor({
-        options: {
-          parts: kcdKongzParts,
-        },
-        data: showcaseData,
+        partOptions: kcdKongzParts,
+        baseData: showcaseData,
         keyToFrame,
         spritesheet,
         spritesheetImagePath:

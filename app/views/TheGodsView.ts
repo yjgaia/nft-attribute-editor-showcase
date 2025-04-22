@@ -62,27 +62,25 @@ export default class TheGodsView extends View {
         parts: showcaseData.parts,
       }),
       this.editor = new NFTAttributeEditor({
-        options: {
-          traits: {
-            Type: ["Stone", "Fire", "Water"],
-            Gender: ["Man", "Woman"],
+        traitOptions: {
+          Type: ["Stone", "Fire", "Water"],
+          Gender: ["Man", "Woman"],
+        },
+        partOptions: {
+          Stone: {
+            Man: stoneManParts,
+            Woman: stoneWomanParts,
           },
-          parts: {
-            Stone: {
-              Man: stoneManParts,
-              Woman: stoneWomanParts,
-            },
-            Fire: {
-              Man: fireManParts,
-              Woman: fireWomanParts,
-            },
-            Water: {
-              Man: waterManParts,
-              Woman: waterWomanParts,
-            },
+          Fire: {
+            Man: fireManParts,
+            Woman: fireWomanParts,
+          },
+          Water: {
+            Man: waterManParts,
+            Woman: waterWomanParts,
           },
         },
-        data: showcaseData,
+        baseData: showcaseData,
         keyToFrame,
         spritesheet,
         spritesheetImagePath: "https://api.gaia.cc/spritesheet/spritesheet.png",

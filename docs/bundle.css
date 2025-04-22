@@ -1789,54 +1789,39 @@ li.chat-content-list-item.temp {
   gap: 8px;
 }
 /* NFT Attribute Editor */
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .option-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 @container (width <= 1000px) {
-  .nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list,
-  .nft-attribute-editor > .accordion > .accordion-item > .content > .part-list {
+  .nft-attribute-editor > .accordion > .accordion-item > .content > .option-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @container (width <= 520px) {
-  .nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list,
-  .nft-attribute-editor > .accordion > .accordion-item > .content > .part-list {
+  .nft-attribute-editor > .accordion > .accordion-item > .content > .option-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .option-list > .option-list-item {
   position: relative;
   aspect-ratio: 1;
   border-radius: 8px;
 }
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .value,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .value,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .value,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .value {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .option-list > .option-list-item > .value {
   position: absolute;
   left: 12px;
   bottom: 12px;
   z-index: 1;
 }
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .checkbox,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .checkbox,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .checkbox,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .checkbox {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .option-list > .option-list-item > .checkbox {
   position: absolute;
   right: 12px;
   top: 12px;
   z-index: 1;
 }
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .trait-list-item > .game-screen,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .trait-list-item > .game-screen,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .trait-list > .part-list-item > .game-screen,
-.nft-attribute-editor > .accordion > .accordion-item > .content > .part-list > .part-list-item > .game-screen {
+.nft-attribute-editor > .accordion > .accordion-item > .content > .option-list > .option-list-item > .game-screen {
   position: absolute;
   inset: 0;
 }

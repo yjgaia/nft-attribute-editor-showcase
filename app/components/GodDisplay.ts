@@ -2,46 +2,12 @@ import { DomNode, el } from "@commonmodule/app";
 import { MaterialLoadingSpinner } from "@commonmodule/material-loading-spinner";
 import { GameScreen } from "@gaiaengine/2d";
 import { Spine } from "@gaiaengine/2d-spine";
-import { PartCategory, PartItem } from "nft-attribute-editor";
-import fireManParts from "../parts-jsons/thegods/fire-man-parts.json" with {
-  type: "json",
-};
-import fireWomanParts from "../parts-jsons/thegods/fire-woman-parts.json" with {
-  type: "json",
-};
-import stoneManParts from "../parts-jsons/thegods/stone-man-parts.json" with {
-  type: "json",
-};
-import stoneWomanParts from "../parts-jsons/thegods/stone-woman-parts.json" with {
-  type: "json",
-};
-import waterManParts from "../parts-jsons/thegods/water-man-parts.json" with {
-  type: "json",
-};
-import waterWomanParts from "../parts-jsons/thegods/water-woman-parts.json" with {
-  type: "json",
-};
 
 interface GodDisplayData {
   type: "Stone" | "Fire" | "Water";
   gender: "Man" | "Woman";
   parts: { [partName: string]: string };
 }
-
-const allGodsPartOptions: Record<string, Record<string, PartCategory[]>> = {
-  Stone: {
-    Man: stoneManParts,
-    Woman: stoneWomanParts,
-  },
-  Fire: {
-    Man: fireManParts,
-    Woman: fireWomanParts,
-  },
-  Water: {
-    Man: waterManParts,
-    Woman: waterWomanParts,
-  },
-};
 
 export default class GodDisplay extends DomNode {
   private screen: GameScreen;
@@ -79,42 +45,9 @@ export default class GodDisplay extends DomNode {
   public render() {
     this.screen.root.clear();
 
-    const partOptions = allGodsPartOptions[this.data.type][this.data.gender];
-    const selectedParts: { [partName: string]: PartItem } = {};
-
-    for (const partOption of partOptions) {
-      const availableParts = partOption.parts.filter((part) => {
-        if (!part.condition) {
-          return true;
-        }
-
-        let partValue: string | undefined;
-
-        if (part.condition.part === "Type") {
-          partValue = this.data.type;
-        } else if (part.condition.part === "Gender") {
-          partValue = this.data.gender;
-        } else {
-          partValue = this.data.parts[part.condition.part];
-        }
-
-        if (!partValue) {
-          return false;
-        }
-
-        return part.condition.values.includes(partValue);
-      });
-      const selectedPartName = this.data.parts[partOption.name];
-      const selectedPart = availableParts.find((part) =>
-        part.name === selectedPartName
-      );
-      if (selectedPart) selectedParts[partOption.name] = selectedPart;
-    }
-
     const skins: string[] = [];
-
-    for (const [traitName, part] of Object.entries(selectedParts)) {
-      skins.push(`${traitName}/${part.name}`);
+    for (const [partName, part] of Object.entries(this.data.parts)) {
+      skins.push(`${partName}/${part}`);
     }
 
     const typeLowerCase = this.data.type.toLowerCase();

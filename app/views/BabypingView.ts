@@ -38,8 +38,8 @@ export default class BabypingView extends View {
       ".babyping-view",
       new BabypingDisplay(showcaseData.parts),
       new NFTAttributeEditor({
-        options: { parts: babypingParts },
-        data: showcaseData,
+        partOptions: babypingParts,
+        baseData: showcaseData,
         keyToFrame: keyToFrame,
         spritesheet,
         spritesheetImagePath:
