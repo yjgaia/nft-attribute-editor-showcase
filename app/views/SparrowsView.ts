@@ -40,6 +40,8 @@ export default class SparrowsView extends View {
       new SparrowDisplay({
         style: showcaseData.traits.Style,
         parts: showcaseData.parts,
+        dialogue:
+          "본문 텍스트의 줄 길이는 일반적으로 40-60자(공백 및 기호포함) 사이가 일반적이나, 데스크탑과 같이 줄 길이가 더 긴 영역에서는 최대 120자 까지 가능합니다.",
       }),
       new NFTAttributeEditor({
         traitOptions: {

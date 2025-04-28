@@ -7,10 +7,13 @@
     "@commonmodule/app-components": "^0.1.8",
     "@commonmodule/material-loading-spinner": "^0.1.7",
     "@gaiaengine/2d-spine": "^0.1.9",
-    "nft-attribute-editor": "^0.0.1"
+    "@resvg/resvg-wasm": "^2.6.2",
+    "nft-attribute-editor": "^0.0.1",
+    "upng-js": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
+    "@types/upng-js": "^2.1.5",
     "@types/webpack": "^5.28.5",
     "css-loader": "^7.1.2",
     "less": "^4.2.0",
