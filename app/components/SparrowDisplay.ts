@@ -60,6 +60,18 @@ export default class SparrowDisplay extends DomNode {
   }
 
   private async test() {
+    const response = await fetch(
+      "https://api.matedevdao.workers.dev/sigor-sparrows/parts-images/normal/1.BG/IJM beige.png",
+    );
+
+    const [imgBgBuf] = await Promise.all([
+      response.arrayBuffer(),
+    ]);
+
+    const pngBg = UPNG.decode(imgBgBuf);
+    const rgbaBg = UPNG.toRGBA8(pngBg)[0];
+    const width = pngBg.width, height = pngBg.height;
+
     const text = "안녕하세요, Workers 👋";
 
     const base64String = fontUrl.split(",")[1];
@@ -73,7 +85,7 @@ export default class SparrowDisplay extends DomNode {
     }
 
     const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
   <style>
     @font-face {
       font-family: "neodgm";
@@ -89,7 +101,7 @@ export default class SparrowDisplay extends DomNode {
     const resvg = new Resvg(
       svg,
       {
-        fitTo: { mode: "width", value: 800 },
+        fitTo: { mode: "width", value: width },
         font: {
           fontBuffers: [fontBytes],
           defaultFontFamily: "neodgm",
@@ -97,25 +109,13 @@ export default class SparrowDisplay extends DomNode {
         },
       },
     );
-    const textPng = resvg.render().asPng();
-
-    const response = await fetch(
-      "https://api.matedevdao.workers.dev/sigor-sparrows/parts-images/normal/1.BG/IJM beige.png",
-    );
-
-    const [imgBgBuf] = await Promise.all([
-      response.arrayBuffer(),
-    ]);
-
-    const pngBg = UPNG.decode(imgBgBuf);
-
-    const rgbaBg = UPNG.toRGBA8(pngBg)[0];
-
-    const width = pngBg.width, height = pngBg.height;
+    const imgTextBuf = resvg.render().asPng();
+    const pngText = UPNG.decode(imgTextBuf);
+    const rgbaText = UPNG.toRGBA8(pngText)[0];
 
     const composite = new Uint8Array(rgbaBg);
 
-    blendImage(composite, textPng);
+    blendImage(composite, new Uint8Array(rgbaText));
 
     const outBuffer = UPNG.encode([composite.buffer], width, height, 0);
 
