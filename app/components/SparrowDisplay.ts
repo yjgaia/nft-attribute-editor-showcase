@@ -1,4 +1,4 @@
-import { DomNode, el } from "@commonmodule/app";
+import { Dom, el } from "@commonmodule/app";
 import { ImageCombiner } from "@commonmodule/image-combiner";
 import fontUrl from "./fonts/neodgm.woff2";
 
@@ -8,7 +8,7 @@ interface SparrowDisplayData {
   dialogue: string;
 }
 
-export default class SparrowDisplay extends DomNode {
+export default class SparrowDisplay extends Dom {
   constructor(data: SparrowDisplayData) {
     super(".sparrow-display");
     this.test();

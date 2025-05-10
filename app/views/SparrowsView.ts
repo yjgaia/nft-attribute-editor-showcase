@@ -1,14 +1,14 @@
-import { BodyNode, el, View } from "@commonmodule/app";
+import { AppRoot, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import SparrowDisplay from "../components/SparrowDisplay.js";
 import sparrowParts from "../parts-jsons/sparrow-parts.json" with {
-  type: "json",
+  type: "json"
 };
 import keyToFrame from "../spritesheets/sparrows/key-to-frame.json" with {
-  type: "json",
+  type: "json"
 };
 import spritesheet from "../spritesheets/sparrows/spritesheet.json" with {
-  type: "json",
+  type: "json"
 };
 
 export default class SparrowsView extends View {
@@ -57,6 +57,6 @@ export default class SparrowsView extends View {
         spritesheetImagePath:
           "https://api.matedevdao.workers.dev/sigor-sparrows/spritesheet/spritesheet.png",
       }),
-    ).appendTo(BodyNode);
+    ).appendTo(AppRoot);
   }
 }

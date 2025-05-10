@@ -1,4 +1,4 @@
-import { BodyNode, el, Router, View } from "@commonmodule/app";
+import { AppRoot, el, Router, View } from "@commonmodule/app";
 import { Button, ButtonGroup, ButtonType } from "@commonmodule/app-components";
 
 export default class IndexView extends View {
@@ -28,6 +28,6 @@ export default class IndexView extends View {
           onClick: () => Router.go("/babyping"),
         }),
       ),
-    ).appendTo(BodyNode);
+    ).appendTo(AppRoot);
   }
 }

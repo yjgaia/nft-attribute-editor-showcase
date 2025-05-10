@@ -1,14 +1,14 @@
-import { BodyNode, el, View } from "@commonmodule/app";
+import { AppRoot, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import BabypingDisplay from "../components/BabypingDisplay.js";
 import babypingParts from "../parts-jsons/babyping-parts.json" with {
-  type: "json",
+  type: "json"
 };
 import keyToFrame from "../spritesheets/babyping/key-to-frame.json" with {
-  type: "json",
+  type: "json"
 };
 import spritesheet from "../spritesheets/babyping/spritesheet.json" with {
-  type: "json",
+  type: "json"
 };
 
 export default class BabypingView extends View {
@@ -45,6 +45,6 @@ export default class BabypingView extends View {
         spritesheetImagePath:
           "https://api.matedevdao.workers.dev/babyping/spritesheet/spritesheet.png",
       }),
-    ).appendTo(BodyNode);
+    ).appendTo(AppRoot);
   }
 }

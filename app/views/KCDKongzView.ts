@@ -1,4 +1,4 @@
-import { BodyNode, el, View } from "@commonmodule/app";
+import { AppRoot, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import KCDKongDisplay from "../components/KCDKongDisplay.js";
 import kcdKongzParts from "../parts-jsons/kcd-kongz-parts.json" with {
@@ -42,6 +42,6 @@ export default class KCDKongzView extends View {
         spritesheetImagePath:
           "https://api.matedevdao.workers.dev/kingcrowndao-kongz/spritesheet/spritesheet.png",
       }),
-    ).appendTo(BodyNode);
+    ).appendTo(AppRoot);
   }
 }

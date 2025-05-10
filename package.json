@@ -4,11 +4,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@commonmodule/app-components": "^0.1.8",
+    "@commonmodule/app-components": "^0.3.6",
     "@commonmodule/image-combiner": "^0.0.3",
-    "@commonmodule/material-loading-spinner": "^0.1.7",
-    "@gaiaengine/2d-spine": "^0.1.9",
-    "nft-attribute-editor": "^0.0.1"
+    "@commonmodule/material-loading-spinner": "^0.3.6",
+    "@gaiaengine/2d-spine": "^0.3.6",
+    "nft-attribute-editor": "^0.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",

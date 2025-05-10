@@ -1,6 +1,6 @@
-import { DomNode } from "@commonmodule/app";
+import { Dom } from "@commonmodule/app";
 
-export default class KCDKongDisplay extends DomNode {
+export default class KCDKongDisplay extends Dom {
   constructor(parts: { [partName: string]: string }) {
     super(".kcd-kong-display");
   }

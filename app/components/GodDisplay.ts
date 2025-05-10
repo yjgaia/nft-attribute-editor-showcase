@@ -1,4 +1,4 @@
-import { DomNode, el } from "@commonmodule/app";
+import { AppRoot, Dom, el } from "@commonmodule/app";
 import { MaterialLoadingSpinner } from "@commonmodule/material-loading-spinner";
 import { GameScreen } from "@gaiaengine/2d";
 import { Spine } from "@gaiaengine/2d-spine";
@@ -6,10 +6,10 @@ import { Spine } from "@gaiaengine/2d-spine";
 interface GodDisplayData {
   type: "Stone" | "Fire" | "Water";
   gender: "Man" | "Woman";
-  parts: { [partName: string]: string };
+  parts: { [partName: string]: string | number };
 }
 
-export default class GodDisplay extends DomNode {
+export default class GodDisplay extends Dom {
   private screen: GameScreen;
   private spineObject?: Spine;
 
@@ -20,7 +20,7 @@ export default class GodDisplay extends DomNode {
 
     this.screen = new GameScreen({ width: 1024, height: 1024 }).appendTo(this);
     this.on("visible", () => this.updateLayout());
-    this.onWindow("resize", () => this.updateLayout());
+    AppRoot.bind(this, "resize", () => this.updateLayout());
 
     this.setData(data);
   }
@@ -80,7 +80,7 @@ export default class GodDisplay extends DomNode {
     }).appendTo(this.screen.root);
 
     this.screen.style({ cursor: "pointer" });
-    this.screen.onDom("click", () => this.touch());
+    this.screen.on("click", () => this.touch());
   }
 
   public touch() {

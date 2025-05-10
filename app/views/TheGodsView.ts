@@ -1,4 +1,4 @@
-import { BodyNode, el, View } from "@commonmodule/app";
+import { AppRoot, el, View } from "@commonmodule/app";
 import { NFTAttributeEditor } from "nft-attribute-editor";
 import GodDisplay from "../components/GodDisplay.js";
 import fireManParts from "../parts-jsons/thegods/fire-man-parts.json" with {
@@ -85,7 +85,7 @@ export default class TheGodsView extends View {
         spritesheet,
         spritesheetImagePath: "https://api.gaia.cc/spritesheet/spritesheet.png",
       }),
-    ).appendTo(BodyNode);
+    ).appendTo(AppRoot);
 
     this.editor.on("dataChanged", (data) => {
       this.godDisplay.setData({
